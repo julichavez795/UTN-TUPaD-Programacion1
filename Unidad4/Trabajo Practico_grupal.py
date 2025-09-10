@@ -25,7 +25,54 @@ while True:
         print("Opción no válida")
 
 #ejercicio17
+class FuncionesPrograma:
+    @staticmethod
+    def get_fecha_string(fecha):
+        dia, mes, anio = fecha.split("/")
+        dias = [
+            "Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis", "Siete", "Ocho", "Nueve", "Diez",
+            "Once", "Doce", "Trece", "Catorce", "Quince", "Dieciséis", "Diecisiete", "Dieciocho", "Diecinueve", "Veinte",
+            "Veintiuno", "Veintidós", "Veintitrés", "Veinticuatro", "Veinticinco", "Veintiséis", "Veintisiete", "Veintiocho", "Veintinueve", "Treinta",
+            "Treinta y uno"
+        ]
+        dia_texto = dias[int(dia) - 1]
+        if mes == "01":
+            mes_texto = "Enero"
+        elif mes == "02":
+            mes_texto = "Febrero"
+        elif mes == "03":
+            mes_texto = "Marzo"
+        elif mes == "04":
+            mes_texto = "Abril"
+        elif mes == "05":
+            mes_texto = "Mayo"
+        elif mes == "06":
+            mes_texto = "Junio"
+        elif mes == "07":
+            mes_texto = "Julio"
+        elif mes == "08":
+            mes_texto = "Agosto"
+        elif mes == "09":
+            mes_texto = "Septiembre"
+        elif mes == "10":
+            mes_texto = "Octubre"
+        elif mes == "11":
+            mes_texto = "Noviembre"
+        elif mes == "12":
+            mes_texto = "Diciembre"
+        else:
+            mes_texto = "Mes inválido"
 
+        if anio == "1900":
+            anio_texto = "mil novecientos"
+        elif anio == "2000":
+            anio_texto = "dos mil"
+        else:
+            anio_texto = "año no definido"
+
+        return dia_texto + " de " + mes_texto + " de " + anio_texto
+fecha = input("Ingrese una fecha:")
+print(FuncionesPrograma.get_fecha_string(fecha))
 
 
 #ejercicio20
