@@ -79,3 +79,38 @@ print(f"Suma: {sumar(num_ingresado,num_ingresado2)}")
 print(f"Resta: {restar(num_ingresado,num_ingresado2)}")
 print(f"Multiplicacion: {multiplicar(num_ingresado,num_ingresado2)}")
 print(f"Division: {dividir(num_ingresado,num_ingresado2)}")
+
+
+#ejercicio8
+def calcular_imc(peso, altura):
+    imc = peso / (altura ** 2)
+    return imc
+
+peso = float(input("Ingrese su peso: "))
+altura = float(input("Ingrese su altura: "))
+
+resultado_imc = calcular_imc(peso, altura)
+print("El IMC es:", resultado_imc)
+
+
+#ejercicio9
+def celsius_a_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
+
+c = float(input("Ingrese la temperatura en Celsius: "))
+f = celsius_a_fahrenheit(c)
+
+print("La temperatura en Fahrenheit es:", f)
+
+
+#ejercicio10
+def calcular_promedio(a, b, c):
+    promedio = (a + b + c) / 3
+    return promedio
+
+n1 = float(input("Ingrese el primer número: "))
+n2 = float(input("Ingrese el segundo número: "))
+n3 = float(input("Ingrese el tercer número: "))
+
+promedio = calcular_promedio(n1, n2, n3)
+print("El promedio es:", promedio)
