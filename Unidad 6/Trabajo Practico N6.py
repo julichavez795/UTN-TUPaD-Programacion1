@@ -114,3 +114,4 @@ n3 = float(input("Ingrese el tercer número: "))
 
 promedio = calcular_promedio(n1, n2, n3)
 print("El promedio es:", promedio)
+print("El promedio es:", promedio)
