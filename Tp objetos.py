@@ -44,6 +44,22 @@ class computadora:
         print(f" Costo total: ${costo}")
         print(f"Precio de venta sugerido: ${precio_venta}")
 
+def cargar_componentes_desde_archivo():
+    componentes = []
+    try:
+        with open("componentes.txt", "r") as archivo:
+            for linea in archivo:
+                datos = linea.strip().split(",")
+                comp = datos[0]
+                marca = datos[1]
+                cant = int(datos[2])
+                precio = float(datos[3])
+                nuevo = componenteCPU(comp, marca, cant, precio)
+                componentes.append(nuevo)
+    except FileNotFoundError:
+        print("Archivo de componentes no encontrado. Se creará uno nuevo.")
+    return componentes        
+
 
 class CostoComputadora:
     def main(self):
@@ -52,14 +68,30 @@ class CostoComputadora:
             modelo = input("Ingrese el modelo de la computadora: ")
 
             componentes = []
-            n = int(input("¿Cuántos componentes desea cargar? "))
+            n = input("Ingrese los componentes y escriba fin para terminar ")
 
-            for i in range(n):
-                print(f"Componente {i+1}")
+            while True:
                 comp = input("Nombre del componente: ")
+                if comp.lower() == "fin":
+                    break
                 marca_comp = input("Marca del componente: ")
-                cant = int(input("Cantidad: "))
-                precio = float(input("Precio unitario: "))
+                try:
+                   cant = int(input("Cantidad: "))
+                   if cant < 0:
+                          print("La cantidad no puede ser negativa. Intente nuevamente.")
+                          continue
+                   break
+                except ValueError:
+                    print("Entrada inválida. Por favor, ingrese un número entero para la cantidad.")
+            while True:
+                try:
+                    precio = float(input("Precio unitario: "))
+                    if precio < 0:
+                        print("El precio no puede ser negativo. Intente nuevamente.")
+                        continue
+                    break
+                except ValueError:
+                    print("Entrada inválida. Por favor, ingrese un número válido para el precio.")
 
                 nuevo = componenteCPU(comp, marca_comp, cant, precio)
                 componentes.append(nuevo)
@@ -77,3 +109,4 @@ class CostoComputadora:
 if __name__ == "__main__":
     programa = CostoComputadora()
     programa.main()
+
