@@ -1,0 +1,4 @@
+Producto: Manzana | Precio: 1600 | Cantidad: 5
+Producto: Galletas | Precio: 2000 | Cantidad: 10
+Producto: Banana | Precio: 1000 | Cantidad: 7
+Producto: Anana | Precio: 2700 | Cantidad: 4
