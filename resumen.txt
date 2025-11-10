@@ -1,0 +1,5 @@
+Empleados mayores de 30 años:
+Ana - Edad: 35 - Salario final: $130,000.00
+Marta - Edad: 42 - Salario final: $66,000.00
+
+Promedio de salarios finales: $97,333.33
